@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:insert="fragments :: head"></head>
+
+<body>
+  <!-- container section start -->
+  <section id="container" class="">
+
+    <!--header start-->
+      <header class="header dark-bg" th:insert="fragments :: infoheader"></header>
+    <!--header end-->
+
+          <!--sidebar start-->
+          <aside th:insert="fragments :: menu"></aside>
+          <!--sidebar end-->
+
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa fa-bars"></i> <b th:text="#{theClients}">The Clients</b></h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a th:href="@{/}">Home</a></li>
+            </ol>
+          </div>
+        </div>
+        <!-- page start-->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal" th:text="#{newClien}">New Client</button>
+
+          <table class="table table-striped table-advance table-hover">
+              <thead>
+              <tr>
+                  <th><i class="icon_profile"></i> <b th:text="#{name}">Name</b></th>
+                  <th><i class="icon_table"></i> <b th:text="#{title}">Title</b></th>
+                  <th><i class="icon_calendar"></i> <b th:text="#{dob}">Date of birth</b></th>
+                  <th><i class="icon_table"></i> <b th:text="#{gender}">Gender</b></th>
+                  <th><i class="icon_table"></i> <b th:text="#{city}">City</b></th>
+                  <th><i class="icon_table"></i> <b th:text="#{address}">Address</b></th>
+                  <th><i class="icon_mail_alt"></i> <b th:text="#{email}">Email</b></th>
+                  <th><i class="icon_mobile"></i> <b th:text="#{mobile}">Mobile</b></th>
+                  <th><i class="icon_cogs"></i> <b th:text="#{actions}">Actions</b></th>
+              </tr>
+              </thead>
+
+              <tbody>
+              <tr th:each="client : ${clients}">
+                  <td th:text="${client.firstname} + ' ' + ${client.lastname}">Name</td>
+                  <td th:text="${client.title}">Title</td>
+                  <td th:text="${#calendars.format(client.dateOfBirth, 'yyyy-MM-dd')}">DateOfBirth</td>
+                  <td th:text="${client.gender}">Gender</td>
+                  <td th:text="${client.city}">City</td>
+                  <td th:text="${client.address}">Address</td>
+                  <td th:text="${client.email}">Email</td>
+                  <td th:text="${client.mobile}">Mobile</td>
+                  <td>
+                      <div class="btn-group">
+                          <a th:href="@{/clients/findById/(id=${client.id})}" class="btn btn-primary" id="editButton"><i class="icon_pencil-edit"></i></a>
+                          <a th:href="@{/clients/findById/(id=${client.id})}" class="btn btn-success" id="detailsButton"><i class="icon_document_alt"></i></a>
+                          <a th:href="@{/clients/delete/(id=${client.id})}" class="btn btn-danger" id="deleteButton"><i class="icon_close_alt2"></i></a>
+                      </div>
+                  </td>
+              </tr>
+              </tbody>
+          </table>
+
+
+          <!-- page end-->
+      </section>
+    </section>
+    <!--main content end-->
+  </section>
+  <!-- container section end -->
+  <!----------------------------------------------------------ADD_NEW---------------------------------------------------------->
+  <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <form th:action="@{/clients/addNew}" method="post">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="ModalLabelAdd" th:text="#{newClien}">New Client</h5>
+                  </div>
+                  <div class="modal-body">
+
+                      <div class="form-group">
+                          <label for="firstnameAdd" class="col-form-label" th:text="#{firstname}">Firstname:</label>
+                          <input type="text" class="form-control" id="firstnameAdd" name="firstname">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="lastnameAdd" class="col-form-label" th:text="#{lastname}">Lastname:</label>
+                          <input type="text" class="form-control" id="lastnameAdd" name="lastname">
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="titleAdd" class="col-form-label" th:text="#{title}">Title:</label>
+                          <input type="text" class="form-control" id="titleAdd" name="title">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="birthDateAdd" class="col-form-label" th:text="#{dob}">Date of birth:</label>
+                          <input type="date" class="form-control" id="birthDateAdd" name="dateOfBirth" placeholder="1995-04-22" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="genderAdd" class="col-form-label" th:text="#{gender}">Gender:</label>
+                          <input type="text" class="form-control" id="genderAdd" name="gender">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="genderAdd" class="col-form-label" th:text="#{city}">City:</label>
+                          <input type="text" class="form-control" id="cityAdd" name="city">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="addressAdd" class="col-form-label" th:text="#{address}">Address:</label>
+                          <input type="text" class="form-control" id="addressAdd" name="address">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="emailAdd" class="col-form-label" th:text="#{email}">Email:</label>
+                          <input type="email" class="form-control" id="emailAdd" name="email">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="mobileAdd" class="col-form-label" th:text="#{mobile}">Mobile:</label>
+                          <input type="text" class="form-control" id="mobileAdd" name="mobile">
+                      </div>
+
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-primary" th:text="#{save}">Save</button>
+                      </div>
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{close}">Close</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+
+  <!----------------------------------------------------------UPDATE---------------------------------------------------------->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="editModalLabel"  th:text="#{updateClien}">Update Client</h5>
+              </div>
+              <div class="modal-body">
+                  <form th:action="@{/clients/update}" method="put">
+
+                      <div class="form-group" hidden>
+                          <label for="idEdit" class="col-form-label">ID:</label>
+                          <input type="text" class="form-control" id="idEdit" name="id">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="firstnameEdit" class="col-form-label" th:text="#{firstname}">Firstname:</label>
+                          <input type="text" class="form-control" id="firstnameEdit" name="firstname">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="lastnameEdit" class="col-form-label" th:text="#{lastname}">Lastname:</label>
+                          <input type="text" class="form-control" id="lastnameEdit" name="lastname">
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="titleEdit" class="col-form-label" th:text="#{title}">Title:</label>
+                          <input type="text" class="form-control" id="titleEdit" name="title">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="birthDateEdit" class="col-form-label" th:text="#{dob}">Date of birth:</label>
+                          <input type="text" class="form-control" id="birthDateEdit" name="dateOfBirth" placeholder="1995-04-22" required>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="genderEdit" class="col-form-label" th:text="#{gender}">Gender:</label>
+                          <input type="text" class="form-control" id="genderEdit" name="gender">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="cityEdit" class="col-form-label" th:text="#{city}">City:</label>
+                          <input type="text" class="form-control" id="cityEdit" name="city">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="addressEdit" class="col-form-label" th:text="#{address}">Address:</label>
+                          <input type="text" class="form-control" id="addressEdit" name="address">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="emailEdit" class="col-form-label" th:text="#{email}">Email:</label>
+                          <input type="email" class="form-control" id="emailEdit" name="email">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="mobileEdit" class="col-form-label" th:text="#{mobile}">Mobile:</label>
+                          <input type="text" class="form-control" id="mobileEdit" name="mobile">
+                      </div>
+
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-primary" th:text="#{save}">Save</button>
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{close}">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!----------------------------------------------------------DETAIL---------------------------------------------------------->
+  <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <form>
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="ModalLabelUpdate" th:text="#{clientDetails}">Employees Details</h5>
+                  </div>
+                  <div class="modal-body">
+
+                      <div class="form-group">
+                          <label for="firstnameDetails" class="col-form-label" th:text="#{firstname}">Firstname:</label>
+                          <input type="text" class="form-control" id="firstnameDetails" name="firstname" readonly>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="lastnameDetails" class="col-form-label" th:text="#{lastname}">Lastname:</label>
+                          <input type="text" class="form-control" id="lastnameDetails" name="lastname" readonly>
+                      </div>
+
+
+                      <div class="form-group">
+                          <label for="titleDetails" class="col-form-label" th:text="#{title}">Title:</label>
+                          <input type="text" class="form-control" id="titleDetails" name="title" readonly>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="birthDateDetails" class="col-form-label" th:text="#{dob}">Date of birth:</label>
+                          <input type="text" class="form-control" id="birthDateDetails" name="dateOfBirth" readonly>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="genderDetails" class="col-form-label" th:text="#{gender}">Gender:</label>
+                          <input type="text" class="form-control" id="genderDetails" name="gender" readonly>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="cityDetails" class="col-form-label" th:text="#{city}">City:</label>
+                          <input type="text" class="form-control" id="cityDetails" name="city">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="addressDetails" class="col-form-label" th:text="#{address}">Address:</label>
+                          <input type="text" class="form-control" id="addressDetails" name="address">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="emailDetails" class="col-form-label" th:text="#{email}">Email:</label>
+                          <input type="email" class="form-control" id="emailDetails" name="email" readonly>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="mobileDetails" class="col-form-label" th:text="#{mobile}">Mobile:</label>
+                          <input type="text" class="form-control" id="mobileDetails" name="mobile" readonly>
+                      </div>
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{close}">Close</button>
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+
+  <!----------------------------------------------------------DELETE---------------------------------------------------------->
+  <div class="modal" id="deleteModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" th:text="#{confirnDel}">Confirm Delete</h5>
+              </div>
+              <div class="modal-body">
+                  <p th:text="#{areYouSureDelete}">Are you sure you want to delete this state?</p>
+              </div>
+              <div class="modal-footer">
+                  <a class="btn btn-primary" id="confirmDeleteBtn" href="" th:text="#{delete}">Delete</a>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" th:text="#{cancel}">Cancel</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- javascripts -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- nice scroll -->
+  <script src="js/jquery.scrollTo.min.js"></script>
+  <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--custome script for all page-->
+  <script src="js/scripts.js"></script>
+  <script src="js/client.js"></script>
+
+
+</body>
+
+</html>
