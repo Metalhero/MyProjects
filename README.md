@@ -8,7 +8,7 @@
 A webalkalmazás **alapjáraton a 9001-es portra van konfigurálva**, amennyiben változtatni szeretnénk rajta az applications.properties -ben váloztathatjuk
 
 **Alapesetben H2(embedded) adatbázist használ az alkalmazás**, de lehetőség van átváltani MySQL szerverre, amihez profilokat hoztam létre a könnyebbség kedvéért
-Váltani a applications.propertiesben: spring.profiles.active = *H2database*
+Váltani a applications.propertiesben:spring.profiles.active=*H2database*
 
 Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
