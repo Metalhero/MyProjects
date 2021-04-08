@@ -1,8 +1,13 @@
 # Projektmunka álláskereséshez
 
+![weblogo](/src/main/resources/static/img/iconsfavicon.jpg)
+
 ## Előszó
 > Esősorban annyit szeretnék mondani hogy ez a projektmunka, elsősorban azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
 > és ezt felhasználva el tudjak helyezkedni a magyarországi IT piacon.
+
+## Alap információk
+A webalkalmazás alapjáraton a 9001-es portra van konfigurálva, amennyiben változtatni szeretnénk rajta az applications.properties -ben váloztathatjuk
 
 ## Projekt során felhasznált technológiák
 - Adatbázis (konfigurációk lejjebb)
@@ -42,4 +47,6 @@
   - Regisztráció:
     - Regex validálás frontend oldalon (legalább egy nagy- és egy kisbetűt kell tartalmaznia továbbá legalább 8 karakter hosszú legyen és tartalmazzon számot is)
     - Jelszó confirmálás
-    - 
+    - Email formátum ellenőrzés
+  - Regisztráció után felkell mennie az e-mailjére a felhasználónak és az emailben megkapott **URL linkre kattintva aktiválja magát**
+  - 
