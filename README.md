@@ -14,6 +14,8 @@ Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
 **Dependency injectionok Setter alapon** vannak megoldva, mivel könnyebben tesztelhető így.
 
+Vannak a HTML kódokban főként kommentelt szekciók amik még felhasználásra várnak a jövőben.
+
 ## Projekt során felhasznált technológiák
 - Adatbázis (konfigurációk lejjebb)
   - JPA + Hibernate
