@@ -1,11 +1,14 @@
 # Projektmunka álláskereséshez
-![favicon](/src/main/resources/static/img/icons/favicon.jpg)
+
 ## Előszó
 > Esősorban annyit szeretnék mondani hogy ez a projektmunka, elsősorban azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
 > és ezt felhasználva el tudjak helyezkedni a magyarországi IT piacon.
 
 ## Alap információk
 A webalkalmazás alapjáraton a 9001-es portra van konfigurálva, amennyiben változtatni szeretnénk rajta az applications.properties -ben váloztathatjuk
+
+Alapesetben H2(embedded) adatbázist használ az alkalmazás, de lehetőség van átváltani MySQL szerverre, amihez profilokat hoztam létre a könnyebbség kedvéért
+spring.profiles.active = H2database
 
 ## Projekt során felhasznált technológiák
 - Adatbázis (konfigurációk lejjebb)
@@ -36,6 +39,10 @@ A webalkalmazás alapjáraton a 9001-es portra van konfigurálva, amennyiben vá
 - Lombok
 - Actuator
   - nincs készítve külön weboldal neki, de a "default" /actuator/ parancsok alatt aktív  (ADMIN jogosultság only)
+- Egyéb technológiák
+  - HTML/CSS
+  - JavaScript
+  - Bootstrap
 
 ## Spring boot Security
 - **Thymeleaf security5** a frontenden sensitive adatok kezelésére
@@ -48,4 +55,10 @@ A webalkalmazás alapjáraton a 9001-es portra van konfigurálva, amennyiben vá
     - Jelszó confirmálás
     - Email formátum ellenőrzés
   - Regisztráció után felkell mennie az e-mailjére a felhasználónak és az emailben megkapott **URL linkre kattintva aktiválja magát**
-  - 
+  - Alapértelmezett ROLE amit friss felhasználó kap: USER
+
+
+
+
+
+![favicon](/src/main/resources/static/img/icons/favicon.jpg)
