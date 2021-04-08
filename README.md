@@ -1,6 +1,5 @@
 # Projektmunka álláskereséshez
 
-![weblogo](/src/main/resources/static/img/icons/favicon.jpg)
 
 ## Előszó
 > Esősorban annyit szeretnék mondani hogy ez a projektmunka, elsősorban azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
