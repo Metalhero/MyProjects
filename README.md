@@ -69,6 +69,8 @@ Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 3. Saját profil teljes kibővítése: saját levelezések, profilkép és egyéb adatok editálása, stb...
 
 
+
+
 Projektet készítette és a dokumentációt írta:
 
 Somogyi György
