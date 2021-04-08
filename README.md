@@ -33,6 +33,7 @@ A webalkalmazás alapjáraton a 9001-es portra van konfigurálva, amennyiben vá
   - Fejléce az oldalnak
   - Menüsáv
   - Header
+  - 
 - E-mail küldés és fogadás
 - Lombok
 - Actuator
