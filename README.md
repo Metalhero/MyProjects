@@ -70,6 +70,7 @@ Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
 
 Projektet készítette és a dokumentációt írta:
+
 Somogyi György
 
 ![favicon](/src/main/resources/static/img/icons/favicon.jpg)
