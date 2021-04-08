@@ -13,7 +13,6 @@ public class HomeController {
 
     UserService userService;
 
-
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
@@ -36,13 +35,12 @@ public class HomeController {
     }
 
     @GetMapping(path = "/activation/{code}")
-    public String activation(@PathVariable("code") String code, HttpServletResponse response) {
+    private String activation(@PathVariable("code") String code, HttpServletResponse response) {
         String result = userService.activateUser(code);
         if (result.equals("ok"))
             return "redirect:/";
         else
             return "/login?error";
     }
-
 
 }

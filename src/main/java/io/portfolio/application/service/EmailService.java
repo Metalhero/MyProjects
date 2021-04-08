@@ -1,5 +1,6 @@
 package io.portfolio.application.service;
 
+import io.portfolio.application.domain.ContactMessage;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class EmailService {
     }
 
     public void sendMessage(String email, String username, String activationCode) {
-        SimpleMailMessage message = null;
+        SimpleMailMessage message;
 
         try{
             message=new SimpleMailMessage();
@@ -41,9 +42,23 @@ public class EmailService {
             javaMailSender.send(message);
 
         }catch (Exception e){
-            log.error("Error with the email sending process: " + email + " " + e);
+            log.error("Error with the email sending(sending) process: " + email + " " + e);
         }
+    }
 
+    public void receivedMessage(ContactMessage contactMessage) {
+        SimpleMailMessage message;
+        try{
+            message=new SimpleMailMessage();
+            message.setFrom(contactMessage.getEmail());
+            message.setTo(MESSAGE_FROM);
+            message.setSubject("Message from: "+contactMessage.getEmail());
+            message.setText(contactMessage.getMessage());
+            javaMailSender.send(message);
+
+        }catch (Exception e){
+            log.error("Error with the email sending(receiving) process: " + contactMessage.getEmail() + " " + e);
+        }
     }
 
 }
