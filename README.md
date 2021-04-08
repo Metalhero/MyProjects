@@ -14,7 +14,7 @@ Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
 **Dependency injectionok Setter alapon** vannak megoldva, mivel könnyebben tesztelhető így.
 
-*Az alkalmazás Email címét sajnos nemtudom prezentálni, mivel hogy a programhoz tudjam tudjam csatolni, szükséges volt a 2lépcsős auth aktiválása ami a telefonomra van irányítva. És minden belépéskor az SMSben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet küldeni a contactus rész alatt nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
+*Az alkalmazás Email címét sajnos nemtudom prezentálni, mivel hogy a programhoz tudjam tudjam csatolni, szükséges volt a 2lépcsős auth aktiválása ami a telefonomra van irányítva. És minden belépéskor az SMSben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet a contact rész alatt küldeni nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
 
 *Vannak a HTML kódokban főként kommentelt szekciók amik még felhasználásra várnak a jövőben.*
 
