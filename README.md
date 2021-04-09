@@ -1,7 +1,7 @@
 # Projektmunka álláskereséshez - DOKUMENTÁCIÓ
 
 ## Előszó
-> Esősorban annyit szeretnék mondani, hogy ez a projektmunka, elsősorban azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
+> Esősorban annyit szeretnék mondani, hogy ez a projektmunka, azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
 > és ezt felhasználva el tudjak helyezkedni a magyarországi IT piacon.
 
 ## Alap információk
