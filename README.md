@@ -5,18 +5,22 @@
 > és ezt felhasználva el tudjak helyezkedni a magyarországi IT piacon.
 
 ## Alap információk
-A webalkalmazás **alapjáraton a 9001-es portra van konfigurálva**, amennyiben változtatni szeretnénk rajta az applications.properties -ben váloztathatjuk
+- A webalkalmazás **alapjáraton a 9001-es portra van konfigurálva**, amennyiben változtatni szeretnénk rajta az applications.properties -ben váloztathatjuk
 
-**Alapesetben H2(embedded) adatbázist használ az alkalmazás**, de lehetőség van átváltani MySQL szerverre, amihez profilokat hoztam létre a könnyebbség kedvéért. 
+- **Alapesetben H2(embedded) adatbázist használ az alkalmazás**, de lehetőség van átváltani MySQL szerverre, amihez profilokat hoztam létre a könnyebbség kedvéért. 
 Váltani a applications.propertiesben: spring.profiles.active=*H2database* vagy a program futásának konfigurálásánál a program argumentekhez: --spring.profiles.active=*profilnév*
 
-Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
+- Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
-**Dependency injectionok Setter alapon** vannak megoldva, mivel könnyebben tesztelhető így.
+- Email küldés funkció néhány esetben nem megy mivel a vírusírtó megfogja, tesztelése alatt ajánlott kikapcsolni ez időre.
 
-*Az alkalmazás Email címét sajnos nemtudom prezentálni, mivel hogy a programhoz tudjam tudjam csatolni, szükséges volt a 2lépcsős auth aktiválása ami a telefonomra van irányítva. És minden belépéskor az SMSben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet a contact rész alatt küldeni nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
+- **Dependency injectionok Setter alapon** vannak megoldva, mivel könnyebben tesztelhető így.
 
-*Vannak a HTML kódokban főként kommentelt szekciók amik még felhasználásra várnak a jövőben.*
+- *Az alkalmazás Email címét sajnos nemtudom prezentálni, mivel hogy a programhoz tudjam tudjam csatolni, szükséges volt a 2lépcsős auth aktiválása ami a telefonomra van irányítva. És minden belépéskor az SMSben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet a contact rész alatt küldeni nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
+
+![image](https://user-images.githubusercontent.com/70749881/114166312-dfaa7380-992d-11eb-8b79-3f4548bde6b4.png)
+
+- *Vannak a HTML kódokban főként kommentelt szekciók amik még felhasználásra várnak a jövőben.*
 
 ## Projekt során felhasznált technológiák
 - Adatbázis (konfigurációk lejjebb)
