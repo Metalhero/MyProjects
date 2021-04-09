@@ -1,7 +1,7 @@
 # Projektmunka álláskereséshez
 
 ## Előszó
-> Esősorban annyit szeretnék mondani hogy ez a projektmunka, elsősorban azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
+> Esősorban annyit szeretnék mondani, hogy ez a projektmunka, elsősorban azért jött létre hogy prezentálni tudjam a jelenlegi tudásomat, 
 > és ezt felhasználva el tudjak helyezkedni a magyarországi IT piacon.
 
 ## Alap információk
@@ -12,11 +12,11 @@ Váltani a applications.propertiesben: spring.profiles.active=*H2database* vagy 
 
 - Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
-- Email küldés funkció néhány esetben nem megy mivel a vírusírtó megfogja, tesztelése alatt ajánlott kikapcsolni ez időre.
+- **Email küldés** funkció néhány esetben nem megy mivel a **vírusírtó megfogja**, tesztelése alatt ajánlott kikapcsolni ez időre.
 
 - **Dependency injectionok Setter alapon** vannak megoldva, mivel könnyebben tesztelhető így.
 
-- *Az alkalmazás Email címét sajnos nemtudom prezentálni, mivel hogy a programhoz tudjam tudjam csatolni, szükséges volt a 2lépcsős auth aktiválása ami a telefonomra van irányítva. És minden belépéskor az SMSben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet a contact rész alatt küldeni nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
+- *Az alkalmazás Email címét sajnos nem tudom prezentálni, mivel ahhoz hogy a programhoz tudjam csatolni, szükséges volt a 2lépcsős auth aktiválás, ami a telefonomra van irányítva. És minden belépéskor az SMS-ben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet a contact rész alatt küldeni nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
 
 > ![image](https://user-images.githubusercontent.com/70749881/114166312-dfaa7380-992d-11eb-8b79-3f4548bde6b4.png)
 
@@ -60,16 +60,16 @@ Váltani a applications.propertiesben: spring.profiles.active=*H2database* vagy 
 ## Spring boot Security
 - **Thymeleaf security5** a frontenden sensitive adatok kezelésére
 - Registration/Login
-  - **bCryptPasswordEncoder** használ az applikáció a jelszavak mentésére és dekódolására
+  - **bCryptPasswordEncoder** használ az alkalmazás a jelszavak mentésére és dekódolására
   - **ROLES** használata az adatbázisban kezelve és a weboldalnak tartalmainak elérhetőségének kezelésére
   - Basicauthentication használata tesztelési fázisban
   - Regisztráció:
     - Regex validálás frontend oldalon (legalább egy nagy- és egy kisbetűt kell tartalmaznia továbbá legalább 8 karakter hosszú legyen és tartalmazzon számot is)
     - Jelszó confirmálás
     - Email formátum ellenőrzés
-  - Regisztráció után felkell mennie az e-mailjére a felhasználónak és az emailben megkapott **URL linkre kattintva aktiválja magát**
+  - Regisztráció után fel kell mennie az e-mailjére a felhasználónak és az emailben megkapott **URL linkre kattintva aktiválja magát**
   - Alapértelmezett ROLE amit friss felhasználó kap: USER
-  - Bejelentkezés után lehetőségünkvan egy kis egyszerű userprofil megtekintésére is
+  - Bejelentkezés után lehetőségünk van egy kis egyszerű user profil megtekintésére is
 
 ## Tervek
 1. A public oldal(ak) teljes elkészítése olymódon hogy egy autókölcsönző/webáruház-ként üzemeljen
