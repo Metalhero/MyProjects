@@ -10,6 +10,8 @@
 - **Alapesetben H2(embedded) adatbázist használ az alkalmazás**, de lehetőség van átváltani MySQL szerverre, amihez profilokat hoztam létre a könnyebbség kedvéért. 
 Váltani a applications.propertiesben: spring.profiles.active=*H2database* vagy a program futásának konfigurálásánál a program argumentekhez: --spring.profiles.active=*profilnév*
 
+- Alapértelmezetten 2 felhasználóval lehet interaktálni: ROLE_USER:[name=user, pass=Asdasd12]  ROLE_ADMIN:[name=admin, pass=Asdasd12]
+
 - Tesztek részlegesen vannak megírva, még tanulgatom a folyamatát.
 
 - **Email küldés** funkció néhány esetben nem megy mivel a **vírusírtó megfogja**, tesztelése alatt ajánlott kikapcsolni ez időre.
