@@ -23,6 +23,7 @@ Váltani a applications.propertiesben: spring.profiles.active=*H2database* vagy 
 - *Az alkalmazás Email címét sajnos nem tudom prezentálni, mivel ahhoz hogy a programhoz tudjam csatolni, szükséges volt a 2lépcsős auth aktiválás, ami a telefonomra van irányítva. És minden belépéskor az SMS-ben kapott kóddal lehet csak belépni. (de tesztelés céljából lehet a contact rész alatt küldeni nekem üzenetet, vagy átírható más emailcímre is, amihez szükséges legeneráltatni egy biztonságikódot, ahhoz pedig aktiválni kell a 2lépcsős biztonsági részt)*
 
 > ![image](https://user-images.githubusercontent.com/70749881/114166312-dfaa7380-992d-11eb-8b79-3f4548bde6b4.png)
+
 *Printscreen az email fiókból*
 - *Vannak a HTML kódokban főként kommentelt szekciók amik még felhasználásra várnak a jövőben.*
 
