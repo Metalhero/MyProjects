@@ -38,7 +38,8 @@ public class EmailService {
             message.setFrom(MESSAGE_FROM);
             message.setTo(email);
             message.setSubject("Projektmunka Registration");
-            message.setText("Dear " + username + "! \n \nThank you for registering to my project!\nHere is your activation link: " + SERVER_URL + "activation/" + activationCode);
+            message.setText("Dear " + username + "! \n \nThank you for registering to my project!\nHere is your activation link: "
+                    + SERVER_URL + "activation/" + activationCode);
             javaMailSender.send(message);
 
         }catch (Exception e){
@@ -50,7 +51,7 @@ public class EmailService {
         SimpleMailMessage message;
         try{
             message=new SimpleMailMessage();
-            message.setFrom(contactMessage.getEmail());
+            message.setFrom(MESSAGE_FROM);
             message.setTo(MESSAGE_FROM);
             message.setSubject("Message from: "+contactMessage.getEmail());
             message.setText(contactMessage.getMessage());

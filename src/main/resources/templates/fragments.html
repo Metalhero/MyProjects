@@ -48,7 +48,7 @@
     </div>
 
     <!--logo start-->
-    <a th:href="@{/}" class="logo">Nice <span class="lite">Admin</span></a>
+    <a th:href="@{/}" class="logo">Project <span class="lite">Application</span></a>
     <!--logo end-->
 
     <div class="nav search-row" id="top_menu">
@@ -65,7 +65,38 @@
 
     <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
+
         <ul class="nav pull-right top-menu">
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="profile-ava">
+                                <img sec:authorize="isAuthenticated()" alt="" th:src="@{'/img/photos/default.jpg'}"
+                                     height="38" width="38">
+                                <img sec:authorize="isAnonymous()" alt="" th:src="@{'/img/photos/default.jpg'}"
+                                     height="38" width="38">
+                            </span>
+                    <span class="username" th:text="${#authentication.name}">Guest</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <div class="log-arrow-up"></div>
+                    <li class="eborder-top" sec:authorize="isAuthenticated()">
+                        <a th:href="@{/profile}"><i class="icon_profile"></i>
+                            <b th:text="#{myProfile}">My Profile</b>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a sec:authorize="isAuthenticated()" th:href="@{/logout}"><i class="icon_key_alt"
+                                                                                     th:action="@{/Logout?logout}"
+                                                                                     method="post"></i>
+                            <b th:text="#{logout}">Logout</b>
+                        </a>
+                        <a sec:authorize="isAnonymous()" th:href="@{/login}"><i class="icon_key_alt"
+                                                                                th:action="@{/login}" method="get"></i>
+                            <b th:text="#{login}">Login</b>
+                        </a>
+                    </li>
 
             <!-- task notificatoin start -->
             <!--<li id="task_notificatoin_bar" class="dropdown">
@@ -265,24 +296,7 @@
             <!-- alert notification end-->
             <!-- user login dropdown start-->
 
-            <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="profile-ava">
-                                <img sec:authorize="isAuthenticated()" alt="" th:src="@{'/img/photos/default.jpg'}"
-                                     height="38" width="38">
-                                <img sec:authorize="isAnonymous()" alt="" th:src="@{'/img/photos/default.jpg'}"
-                                     height="38" width="38">
-                            </span>
-                    <span class="username" th:text="${#authentication.name}">Guest</span>
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu extended logout">
-                    <div class="log-arrow-up"></div>
-                    <li class="eborder-top" sec:authorize="isAuthenticated()">
-                        <a th:href="@{/profile}"><i class="icon_profile"></i>
-                            <b th:text="#{myProfile}">My Profile</b>
-                        </a>
-                    </li>
+
                     <!--               <li>
                                     <a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
                                   </li>
@@ -292,17 +306,7 @@
                                   <li>
                                     <a href="#"><i class="icon_chat_alt"></i> Chats</a>
                                   </li>-->
-                    <li>
-                        <a sec:authorize="isAuthenticated()" th:href="@{/logout}"><i class="icon_key_alt"
-                                                                                     th:action="@{/Logout?logout}"
-                                                                                     method="post"></i>
-                            <b th:text="#{logout}">Logout</b>
-                        </a>
-                        <a sec:authorize="isAnonymous()" th:href="@{/login}"><i class="icon_key_alt"
-                                                                                th:action="@{/login}" method="get"></i>
-                            <b th:text="#{login}">Login</b>
-                        </a>
-                    </li>
+
                     <!--              <li>
                                     <a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
                                   </li>
