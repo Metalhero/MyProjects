@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         String[] openResources=new String[]{"/", "/reg", "/registration", "/css/**", "/assets/**", "/contactform/**",
-                "/fonts/**", "/img/**", "/js/**", "/error**", "/users/addNew", "/activation/**"
+                "/fonts/**", "/img/**", "/js/**", "/error**", "/users/addNew", "/activation/**", "/contactus"
         };
         String[] userResources=new String[]{
                 "/vehicles"
