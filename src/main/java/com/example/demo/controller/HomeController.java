@@ -1,17 +1,22 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class HomeController {
 
-/*    UserService userService;
+    UserService userService;
 
     @Autowired
     public void setUserService(UserService userService) {
         this.userService = userService;
-    }*/
+    }
 
     @GetMapping("/")
     private String Index() {
@@ -19,7 +24,7 @@ public class HomeController {
     }
 
 
-/*    @GetMapping("/login")
+    @GetMapping("/login")
     private String login() {
         return "login";
     }
@@ -27,15 +32,15 @@ public class HomeController {
     @GetMapping("/registration")
     private String registrationPage() {
             return "registration";
-    }*/
+    }
 
-/*    @GetMapping(path = "/activation/{code}")
+    @GetMapping(path = "/activation/{code}")
     private String activation(@PathVariable("code") String code, HttpServletResponse response) {
         String result = userService.activateUser(code);
         if (result.equals("ok"))
             return "redirect:/";
         else
             return "/login?error";
-    }*/
+    }
 
 }
