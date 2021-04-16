@@ -1,5 +1,6 @@
 package com.example.demo.configuration;
 
+import com.example.demo.service.MyUserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -56,10 +57,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         ;
     }
 
-/*    @Bean
+    @Bean
     public UserDetailsService userDetailsService(){
         return new MyUserDetailsServiceImpl();
-    }*/
+    }
 
     @Bean
     BCryptPasswordEncoder bCryptPasswordEncoder() {
