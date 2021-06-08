@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class TimeFormatter {
+
+    public static String formatDuration(int seconds) {
+        //validates for exceptions
+        if (seconds == 0)
+            return "now";
+        else if (seconds < 0)
+            throw new IllegalArgumentException("seconds cant be zero");
+        else if (seconds < 60)
+            return seconds + " second";
+
+        //time variables initialised (one unit)
+        final Map<String, Integer> timeVariables = new LinkedHashMap<>() {{
+            put("year", 31536000);
+            put("day", 86400);
+            put("hour", 3600);
+            put("minute", 60);
+            put("second", 1);
+        }};
+
+        List<String> words = new ArrayList<>();
+
+        //load the words list
+        for (Map.Entry<String, Integer> time : timeVariables.entrySet()) {
+
+            int division = seconds / time.getValue();
+            if (division > 1)
+                words.add((division) + " " + time.getKey() + "s");
+            else if (division > 0)
+                words.add((division) + " " + time.getKey());
+            seconds = seconds % time.getValue();
+        }
+
+        //create the result string from the elements
+        StringBuilder result = new StringBuilder(words.get(0));
+        for (int i = 1; i < words.size(); i++) {
+            result.append((words.size() - i == 1) ? " and " + words.get(i) : ", " + words.get(i));
+        }
+
+        return result.toString();
+    }
+}
