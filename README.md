@@ -1,6 +1,6 @@
 # This project was made for a company to test my skills
 ## About the project:
-Do the codeing excecise with best of my knowledge.\ 
+Do the codeing excecise with best of my knowledge.\
 Task description: [link](https://www.codewars.com/kata/human-readable-duration-format)
 ## Used technologies
 - Spring boot
